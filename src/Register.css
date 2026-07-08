@@ -1,0 +1,83 @@
+.register-page{
+    min-height:100vh;
+  background:linear-gradient(135deg,#444444,#353232,#2c2c2c);
+    display:flex;
+    align-items:center;
+}
+
+/* Card */
+
+.register-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+    transition:.4s;
+}
+
+.register-card:hover{
+    transform:translateY(-5px);
+}
+
+/* Heading */
+
+.register-card h2{
+    font-weight:700;
+    color:#222;
+}
+
+/* Input */
+
+.custom-input{
+    height:55px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    padding-left:18px;
+    transition:.3s;
+    box-shadow:none;
+}
+
+.custom-input:focus{
+    border-color:#6f42c1;
+    box-shadow:0 0 12px rgba(111,66,193,.25);
+}
+
+/* Button */
+.register-btn{
+    height:55px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#111111,#333333);
+    border:none;
+    color:#ffffff;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.register-btn:hover{
+    background:linear-gradient(135deg,#000000,#222222);
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+/* Login Link */
+
+.login-link{
+    color:#6a11cb;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.login-link:hover{
+    text-decoration:underline;
+}
+
+/* Responsive */
+
+@media(max-width:576px){
+
+.register-card{
+    padding:25px;
+}
+
+}

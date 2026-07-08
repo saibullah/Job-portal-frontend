@@ -1,0 +1,12 @@
+.nav-link{
+  color: white;
+}
+h2{
+  color: rgb(247, 246, 246) ;
+}
+ .nav-link:hover{
+   color: rgb(21, 76, 127);
+ }
+ .bag{
+  background-color: red;
+ }

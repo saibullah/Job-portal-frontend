@@ -1,0 +1,77 @@
+/* Navbar Container */
+
+.nav-wrapper{
+    padding:18px;
+    background:#0f0f0f;
+}
+
+/* Navbar */
+
+.premium-navbar{
+    background:#1a1a1a;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    padding:15px 30px;
+}
+
+/* Logo */
+
+.logo{
+    text-decoration:none;
+    letter-spacing:1px;
+    color:#fff;
+}
+
+/* Navigation Links */
+
+.premium-link{
+    color:#cfcfcf !important;
+    margin-left:20px;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+/* Hover */
+
+.premium-link:hover{
+    color:#ffffff !important;
+}
+
+/* Underline Animation */
+
+.premium-link::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:0;
+    background:#ffffff;
+    transition:.3s;
+}
+
+.premium-link:hover::after{
+    width:100%;
+}
+
+/* Active Link */
+
+.premium-link.active{
+    color:#fff !important;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.premium-navbar{
+    padding:15px;
+}
+
+.premium-link{
+    margin-left:0;
+    padding:10px 0;
+}
+
+}
