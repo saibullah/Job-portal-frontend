@@ -1,68 +1,116 @@
-import React from 'react'
-// import { useNavigate } from "react-router-dom";
-// import { GoogleLogin } from '@react-oauth/google';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../Login.css";
+import api from "../api/api";
+
 function Login() {
-    // const navigate = useNavigate()
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    //  function handleLogin(e) {
-    //     e.preventDefault();
+    const navigate = useNavigate()
+    const[formData , setFormData]=useState({
+        email:"",
+        password:""
+    })
+    // Handle input changes
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-    //     // CHECK LOGIN
-    //     if (
-    //         email === "abcd" &&
-    //         password === "1234"
-    //     ) {
-    //         localStorage.setItem("login", true);
-    //         navigate("/home");
-    //     }
-    //     else {
+  // Handle login
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    //         alert("Wrong Email or Password");
-    //     }
-    // }
-    // function handleSuccess(response) {
-    //     console.log(response);
-    //     localStorage.setItem("login", true);
-    //     navigate("/home");
-    // }
+    try {
+      const response = await api.post("/auth/login", {
+        email: formData.email,
+        password: formData.password,
+      });
 
-    // function handleError() {
-    //     console.log("Login Failed");
-    // }
-    
+      alert(response.data.message);
+
+      // Save JWT Token
+      localStorage.setItem("token", response.data.token);
+
+      // Navigate to Home
+      navigate("/");
+
+    } catch (error) {
+      alert(error.response?.data?.message || "Login Failed");
+    }
+  };
+
   return (
-      <div className='container mt-5 pt-5 '>
-            <div className=' row d-flex justify-content-center m-auto '>
-                <div className='col-sm-6 m-auto '>
-                    <div className='card shadow'>
-                        <div className='card-body'>
-                            <form action="">
-                                <div className='container- '>
-                                    <h2 className='text-center login'>Login</h2>
-                                    <input className='form-control my-3' type="email" placeholder='Enter Your Email' 
-                                    // onChange={(e) => setEmail(e.target.value)}
-                                     />
-                                    <input className='form-control my-3' type="password" placeholder='Enter Your Password'
-                                    //  onChange={(e) => setPassword(e.target.value)}
-                                      />
-                                    <div className='d-flex justify-content-center align-item-center'>
-                                        <button className='btn bg-primary my-3'
-                                        //  onClick={handleLogin}
-                                         >Submit</button>
-                                    </div>
-                                    {/* <div className='my-3'>
-                                        <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
-                                    </div> */}
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+    <div className="register-page">
+      <div className="container">
+        <div className="row justify-content-center align-items-center min-vh-100">
+          <div className="col-md-8 col-lg-6 col-xl-5">
+
+            <div className="register-card shadow-lg">
+
+              <div className="text-center mb-4">
+                <h2 className="fw-bold">Welcome Back</h2>
+                <p className="text-muted">
+                  Sign in to continue to your account.
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit}>
+
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control custom-input"
+                    placeholder="Enter your email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
                 </div>
+
+                <div className="mb-4">
+                  <label className="form-label fw-semibold">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control custom-input"
+                    placeholder="Enter your password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <button type="submit" className="btn register-btn w-100">
+                  Login
+                </button>
+
+                <p className="text-center mt-3">
+                  <a href="/" className="forgot-link">
+                    Forgot Password?
+                  </a>
+                </p>
+
+                <p className="text-center mt-3 text-muted">
+                  Don't have an account?
+                  <Link to="/register" className="login-link text-decoration-none">
+                    {" "}Register
+                  </Link>
+                </p>
+
+              </form>
+
             </div>
 
+          </div>
         </div>
-  )
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

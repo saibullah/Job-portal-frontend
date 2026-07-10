@@ -1,0 +1,74 @@
+.job-details-card{
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    border:1px solid #ececec;
+}
+
+.details-title{
+    font-size:40px;
+    font-weight:700;
+    color:#111;
+}
+
+.company-text{
+    color:#666;
+    margin-top:10px;
+}
+
+.info-box{
+    background:#f8f9fa;
+    padding:20px;
+    border-radius:15px;
+    transition:.3s;
+    border:1px solid #ececec;
+}
+
+.info-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.info-box h6{
+    font-weight:700;
+    color:#222;
+}
+
+.info-box p{
+    margin-top:10px;
+    margin-bottom:0;
+    color:#555;
+}
+
+.description{
+    line-height:1.8;
+    color:#555;
+}
+
+.skill-badge{
+    background:#111;
+    color:#fff;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:14px;
+}
+
+.apply-btn{
+    width:100%;
+    background:linear-gradient(135deg,#111,#333);
+    color:#fff !important;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.apply-btn:hover{
+    background:linear-gradient(135deg,#000,#222);
+    color:#fff !important;
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}

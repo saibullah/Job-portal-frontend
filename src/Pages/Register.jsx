@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Register.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import api from '../api/api'
 
@@ -34,7 +34,6 @@ function Register() {
       alert(error.response?.data?.message || "Registration Failed");
     }
   };
-
   return (
 
     <div className="register-page">
@@ -101,7 +100,7 @@ function Register() {
 
                 <p className="text-center mt-4 text-muted">
                   Already have an account?
-                  <span to="/login" className="login-link"> Login</span>
+                  <Link to="/login" className="login-link"> Login</Link>
                 </p>
 
               </form>
