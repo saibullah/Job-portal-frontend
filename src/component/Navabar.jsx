@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import '../Nav.css'
+import '../styles/Nav.css'
 function Navabar() {
   const navigate = useNavigate()
   const handleLogout = () => {
@@ -25,7 +25,7 @@ function Navabar() {
               Home
             </Link>
           </li>
-
+         
           <li className="nav-item">
             <Link to="/contact" className="nav-link premium-link">
               Contact
@@ -38,12 +38,12 @@ function Navabar() {
             </Link>
           </li>
           <li className="nav-item">
-           
-              <button className='btn btn-dark'
-                onClick={handleLogout}>
-                Logout
-              </button>
-           
+
+            <button className='btn btn-dark'
+              onClick={handleLogout}>
+              Logout
+            </button>
+
           </li>
 
         </ul>

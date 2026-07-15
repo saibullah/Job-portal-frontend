@@ -2,18 +2,19 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import '../JobDetail.css'
+import '../styles/JobDetail.css'
 import api from '../api/api'
 
 function JobDetails() {
   const [jobdetail, setJob] = useState(null)
   const { id } = useParams()
   const navigate = useNavigate()
+  const [applied, setApplied] = useState(false)
+  const role = localStorage.getItem("role")
   useEffect(() => {
     fetch(`http://localhost:5000/api/jobs/${id}`)
       .then(res => res.json())
       .then((data) => {
-        console.log("Data:", data);
         setJob(data.job);
       });
   }, [id])
@@ -24,29 +25,28 @@ function JobDetails() {
       </div>
     );
   }
-const handleapply= async ()=>{
-  const token = localStorage.getItem("token")
-  if (!token){
-    navigate("/login")
-    return;
-  }
- try {
-    const response = await api.post(
-      `/applications/${id}`,
-      {},
-
-
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    alert(response.data.message);
-  } catch (error) {
-    alert(error.response?.data?.message || "Application failed");
-  }
-};
+  const handleapply = async () => {
+    const token = localStorage.getItem("token")
+    if (!token) {
+      navigate("/login")
+      return;
+    }
+    try {
+      const response = await api.post(
+        `/applications/${id}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      alert(response.data.message);
+      setApplied(true)
+    } catch (error) {
+      alert(error.response?.data?.message || "Application failed");
+    }
+  };
   return (
     <div className="container py-5">
       <div className="job-details-card">
@@ -96,9 +96,16 @@ const handleapply= async ()=>{
             {jobdetail.description}
           </p>
         </div>
-        <button className="btn apply-btn" onClick={handleapply}>
-          Apply Now
-        </button>
+        {role==="admin"?(<button className="btn apply-btn" disabled>
+          Admin cannot Apply jobs
+        </button>):
+        
+        applied ? (<button className="btn apply-btn" disabled>
+          Applied
+        </button>) :
+          (<button className="btn apply-btn" onClick={handleapply}>
+            Apply Now
+          </button>)}
       </div>
     </div>
   )

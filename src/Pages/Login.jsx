@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Login.css";
+import "../styles/Login.css";
 import api from "../api/api";
 
 function Login() {
@@ -20,7 +20,7 @@ function Login() {
   // Handle login
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     try {
       const response = await api.post("/auth/login", {
         email: formData.email,
@@ -29,11 +29,14 @@ function Login() {
 
       alert(response.data.message);
 
-      // Save JWT Token
       localStorage.setItem("token", response.data.token);
-
-      // Navigate to Home
-      navigate("/");
+      localStorage.setItem("role" , response.data.user.role);
+      localStorage.setItem("login", "true")
+      if(response.data.user.role==="admin"){
+navigate("/admin-dashboard")
+      } else{
+        navigate("/")
+      }
 
     } catch (error) {
       alert(error.response?.data?.message || "Login Failed");

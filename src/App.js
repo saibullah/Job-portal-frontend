@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
 import Jobs from './Pages/Jobs';
 import MyApplication from './Pages/MyApplication';
 import Profiles from './Pages/Profiles';
@@ -26,7 +25,7 @@ function App() {
           <Route path='/' element={<Jobs />} />
           <Route path='/my-application' element={<ProtectedRoute> <MyApplication /></ProtectedRoute>} />
           <Route path='/profile' element={<ProtectedRoute><Profiles /></ProtectedRoute>} />
-          <Route path='/admin-dasboard' element={<AdminRoute><AdminDasboard /></AdminRoute>} />
+          <Route path='/admin-dashboard' element={<AdminRoute><AdminDasboard /></AdminRoute>} />
           <Route path='/job/:id' element={<JobDetails />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/about-us' element={<Aboutus />} />

@@ -1,0 +1,87 @@
+/* Admin Card */
+
+.admin-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    border:1px solid #ececec;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    height:100%;
+}
+
+.admin-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+/* Title */
+
+.admin-job-title{
+    font-size:24px;
+    font-weight:700;
+    color:#111;
+    margin-bottom:8px;
+}
+
+.company-name{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/* Create Job Button */
+
+.admin-create-btn{
+    background:linear-gradient(135deg,#111,#333);
+    color:#fff !important;
+    border:none;
+    padding:12px 24px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.admin-create-btn:hover{
+    background:linear-gradient(135deg,#000,#222);
+    color:#fff !important;
+}
+
+/* Edit */
+
+.edit-btn{
+    background:#f8f9fa;
+    color:#0d0c0c !important;
+    border:1px solid #ddd;
+    font-weight:600;
+}
+
+.edit-btn:hover{
+    background:#e9ecef;
+}
+
+/* Delete */
+
+.delete-btn{
+    background:#dc3545;
+    color:#fff;
+    border:none;
+    font-weight:600;
+}
+
+.delete-btn:hover{
+    background:#bb2d3b;
+    color:#fff;
+}
+
+/* Applicants */
+
+.applicants-btn{
+    background:#111;
+    color:#171616 !important;
+    font-weight:600;
+}
+
+.applicants-btn:hover{
+    background:#000;
+    color:#0f0b0b !important;
+}

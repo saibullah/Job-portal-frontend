@@ -1,0 +1,79 @@
+/* Application Card */
+
+.application-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    border:1px solid #ececec;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    height:100%;
+}
+
+.application-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+/* Job Title */
+
+.job-title{
+    font-size:24px;
+    font-weight:700;
+    color:#111;
+    margin-bottom:5px;
+}
+
+/* Company */
+
+.company-name{
+    color:#666;
+    font-size:16px;
+}
+
+/* Status Badge */
+
+.status-badge{
+    padding:8px 16px;
+    border-radius:30px;
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* Pending */
+
+.pending{
+    background:#f39c12;
+}
+
+/* Accepted */
+
+.accepted{
+    background:#27ae60;
+}
+
+/* Rejected */
+
+.rejected{
+    background:#e74c3c;
+}
+
+/* Button */
+
+.application-btn{
+    background:linear-gradient(135deg,#111,#333);
+    color:#fff !important;
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.application-btn:hover{
+    background:linear-gradient(135deg,#000,#222);
+    color:#fff !important;
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
