@@ -36,7 +36,9 @@ console.log(applications);
 
   <div className="row g-4">
 
-    {applications.map((application) => (
+    {applications
+  .filter((application) => application.job)
+  .map((application) => (
 
       <div className="col-md-6 col-lg-4" key={application._id}>
 

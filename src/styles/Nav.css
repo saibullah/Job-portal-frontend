@@ -1,11 +1,8 @@
-/* Navbar Container */
 
 .nav-wrapper{
     padding:18px;
     background:#0f0f0f;
 }
-
-/* Navbar */
 
 .premium-navbar{
     background:#1a1a1a;
@@ -14,15 +11,11 @@
     padding:15px 30px;
 }
 
-/* Logo */
-
 .logo{
     text-decoration:none;
     letter-spacing:1px;
     color:#fff;
 }
-
-/* Navigation Links */
 
 .premium-link{
     color:#cfcfcf !important;
@@ -31,8 +24,6 @@
     position:relative;
     transition:.3s;
 }
-
-/* Hover */
 
 .premium-link:hover{
     color:#ffffff !important;
@@ -55,14 +46,9 @@
     width:100%;
 }
 
-/* Active Link */
-
 .premium-link.active{
     color:#fff !important;
 }
-
-/* Mobile */
-
 @media(max-width:768px){
 
 .premium-navbar{

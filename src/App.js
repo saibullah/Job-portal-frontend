@@ -14,6 +14,7 @@ import EditJob from './Pages/EditJob';
 import JobDetails from './Pages/JobDetails';
 import ProtectedRoute from './component/ProtectedRoute';
 import AdminRoute from './component/AdminRoute';
+import AdminApplicant from './Pages/AdminApplicant';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/admin/create-job" element={<AdminRoute><CreateJob /></AdminRoute>} />
           <Route path="/admin/edit-job/:id" element={<AdminRoute><EditJob /></AdminRoute>} />
+          <Route path="/admin/applicant/:id" element={<AdminRoute><AdminApplicant/></AdminRoute>} />
 
 
         </Routes>

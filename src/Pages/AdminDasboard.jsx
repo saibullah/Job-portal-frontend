@@ -84,7 +84,7 @@ function AdminDasboard() {
                   🗑 Delete Job
                 </button>
                 <Link
-                  to={`/admin/applicants/${job._id}`}
+                  to={`/admin/applicant/${job._id}`}
                   className="btn applicants-btn"
                 >
                   👥 View Applicants

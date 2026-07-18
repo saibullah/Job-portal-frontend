@@ -5,8 +5,6 @@
     align-items: center;
 }
 
-/* Card */
-
 .register-card {
     background: #ffffff;
     border-radius: 20px;
@@ -16,15 +14,10 @@
 }
 
 
-
-/* Heading */
-
 .register-card h2 {
     font-weight: 700;
     color: #222;
 }
-
-/* Input */
 
 .custom-input {
     height: 55px;
@@ -40,7 +33,6 @@
     box-shadow: 0 0 12px rgba(111, 66, 193, .25);
 }
 
-/* Button */
 .register-btn{
     background:linear-gradient(135deg,#111111,#333333);
     color:white;
@@ -58,7 +50,6 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, .4);
 }
 
-/* Login Link */
 
 .login-link {
     color: #6a11cb;
@@ -69,8 +60,6 @@
 .login-link:hover {
     text-decoration: underline;
 }
-
-/* Responsive */
 
 @media(max-width:576px) {
 
