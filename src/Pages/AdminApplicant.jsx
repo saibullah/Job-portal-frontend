@@ -10,10 +10,17 @@ function AdminApplicant() {
     useEffect(() => {
         const fetchjob = async () => {
             try {
-                const response = await api.get(`/applicants/job/${jobId}`)
-                setApplicant(response.data.jobs)
+                const token = localStorage.getItem("token")
+                const response = await api.get(`/applications/job/${jobId}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                console.log("Response:", response.data)
+                setApplicant(response.data)
             } catch (err) {
-                console.log(err);
+                console.log("Status:", err.response?.status);
+                console.log("Data:", err.response?.data);
 
             }
         }
@@ -21,11 +28,11 @@ function AdminApplicant() {
     }, [jobId])
     return (
         <div>AdminApplicant
-            {applicants.map((applicant)=>(
-                <div key={applicant._id}>
-                    <h2>{applicant.user.name}</h2>
-                                        <h2>{applicant.user.email}</h2>
-
+            {applicants.map((application) => (
+                <div key={application._id}>
+                    <h4>{application.user.name}</h4>
+                    <p>{application.user.email}</p>
+                    <p>Status: {application.status}</p>
                 </div>
             ))}
         </div>

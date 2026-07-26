@@ -3,6 +3,7 @@ import api from '../api/api'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Job.css'
+import AiDrawer from './AiDrawer'
 function Jobs() {
   const role = localStorage.getItem("role")
 
@@ -78,12 +79,13 @@ function Jobs() {
               </Link>
 
             </div>
-
           </div>
         ))}
 
       </div>
     </div>
+    
+<AiDrawer/>
 <div className="container-fluid bg-dark text-light mt-5">
   <div className="container py-5">
     <div className="row">

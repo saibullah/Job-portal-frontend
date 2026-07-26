@@ -4,8 +4,9 @@ import '../styles/Nav.css'
 function Navabar() {
   const navigate = useNavigate()
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
+    localStorage.removeItem("token")
+    
+    navigate("/login")
   };
   return (
     <div className="nav-wrapper">

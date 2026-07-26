@@ -34,7 +34,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/admin/create-job" element={<AdminRoute><CreateJob /></AdminRoute>} />
           <Route path="/admin/edit-job/:id" element={<AdminRoute><EditJob /></AdminRoute>} />
-          <Route path="/admin/applicant/:id" element={<AdminRoute><AdminApplicant/></AdminRoute>} />
+          <Route path="/admin/applicants/:jobId" element={<AdminRoute><AdminApplicant/></AdminRoute>} />
 
 
         </Routes>
