@@ -31,7 +31,7 @@ function AdminDasboard() {
 
     alert(response.data.message);
 
-    fetchJobs(); // Refresh the jobs list
+    fetchJobs()
 
   } catch (error) {
     alert("Failed to delete job");

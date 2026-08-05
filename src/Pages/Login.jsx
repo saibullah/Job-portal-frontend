@@ -8,16 +8,16 @@ function Login() {
     const[formData , setFormData]=useState({
         email:"",
         password:""
-    })
-    // Handle input changes
+    })  
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
-  // Handle login
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -25,12 +25,12 @@ function Login() {
       const response = await api.post("/auth/login", {
         email: formData.email,
         password: formData.password,
-      });
+      })
 
       alert(response.data.message);
 
-      localStorage.setItem("token", response.data.token);
-      localStorage.setItem("role" , response.data.user.role);
+      localStorage.setItem("token", response.data.token)
+      localStorage.setItem("role" , response.data.user.role)
       localStorage.setItem("login", "true")
       if(response.data.user.role==="admin"){
 navigate("/admin-dashboard")
@@ -42,7 +42,15 @@ navigate("/admin-dashboard")
       alert(error.response?.data?.message || "Login Failed");
     }
   };
+//   const handlesubmit = async (e)={
+//     e.preventDefault()
+//     try{
+// const res = await api.post("/auth/login")
+//     }catch(err){
+// console.log(err);
 
+//     }
+//   }
   return (
     <div className="register-page">
       <div className="container">

@@ -9,6 +9,7 @@ function Navabar() {
     navigate("/login")
   };
   return (
+    <section id='navbar'>
     <div className="nav-wrapper">
       <nav className="navbar navbar-expand-lg premium-navbar px-4">
 
@@ -28,15 +29,13 @@ function Navabar() {
           </li>
          
           <li className="nav-item">
-            <Link to="/contact" className="nav-link premium-link">
-              Contact
-            </Link>
+            <a href="#contact" className="nav-link premium-link">Contact</a>
           </li>
 
           <li className="nav-item">
-            <Link to="/about-us" className="nav-link premium-link">
+            <a href='#contact' className="nav-link premium-link">
               About Us
-            </Link>
+            </a>
           </li>
           <li className="nav-item">
 
@@ -51,6 +50,7 @@ function Navabar() {
 
       </nav>
     </div>
+    </section>
   )
 }
 

@@ -1,11 +1,10 @@
 // import logo from './logo.svg';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import Jobs from './Pages/Jobs';
 import MyApplication from './Pages/MyApplication';
 import Profiles from './Pages/Profiles';
 import AdminDasboard from './Pages/AdminDasboard';
 import Navabar from './component/Navabar';
-import Contact from './Pages/Contact';
 import Aboutus from './Pages/Aboutus';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
@@ -20,7 +19,6 @@ import AdminApplicant from './Pages/AdminApplicant';
 function App() {
   return (
     <div>
-      <BrowserRouter>
         <Navabar />
         <Routes>
           <Route path='/' element={<Jobs />} />
@@ -28,7 +26,6 @@ function App() {
           <Route path='/profile' element={<ProtectedRoute><Profiles /></ProtectedRoute>} />
           <Route path='/admin-dashboard' element={<AdminRoute><AdminDasboard /></AdminRoute>} />
           <Route path='/job/:id' element={<JobDetails />} />
-          <Route path='/contact' element={<Contact />} />
           <Route path='/about-us' element={<Aboutus />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -38,7 +35,6 @@ function App() {
 
 
         </Routes>
-      </BrowserRouter>
 
     </div>
   );
