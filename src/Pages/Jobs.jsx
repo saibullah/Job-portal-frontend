@@ -7,20 +7,41 @@ import AiDrawer from './AiDrawer'
 import Contact from './Contact'
 function Jobs() {
   const role = localStorage.getItem("role")
+  const [loading, setLoading] = useState(true);
 
   const [jobs, setJobs] = useState([])
   useEffect(() => {
+     setLoading(true);
     api.get("/jobs").then((res) => {
       console.log("Response:", res.data);
       setJobs(res.data.jobs)
+       setLoading(false); 
     })
       .catch((err) => {
-        console.log(err);
+        console.log(err)
+         setLoading(false)
 
       })
   }, [])
+   if (loading) {
+    return (
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+
+        <div className="spinner-border text-dark mb-3"></div>
+
+        <h4>Loading Jobs...</h4>
+
+        <p className="text-muted">
+          Please wait while we fetch the latest opportunities.
+        </p>
+
+      </div>
+    );
+  }
   return (
     <div>
+
+     
     <div className="container py-5">
       <div className="row g-4">
         {role === "admin" ? (
