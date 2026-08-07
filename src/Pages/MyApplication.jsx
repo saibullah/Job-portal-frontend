@@ -80,10 +80,10 @@ console.log(applications);
             💼 <strong>Job Type:</strong> {application.job.jobType}
           </p>
 
-          <button className="btn application-btn w-100">
-            <Link to={`/job/${application.job._id}`}> View Job</Link>
+         
+            <Link to={`/job/${application.job._id}`}>  <button className="btn application-btn w-100">View Job </button></Link>
            
-          </button>
+         
 
         </div>
 
