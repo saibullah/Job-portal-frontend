@@ -55,6 +55,12 @@ function JobDetails() {
   };
   return (
     <div className="container py-5">
+      <button
+      className="btn btn-outline-dark mb-3"
+      onClick={() => navigate(-1)}
+    >
+      ← Back
+    </button>
       <div className="job-details-card">
         <div className="d-flex justify-content-between align-items-start flex-wrap">
           <div>
