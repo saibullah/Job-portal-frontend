@@ -12,12 +12,18 @@ function JobDetails() {
   const [applied, setApplied] = useState(false)
   const role = localStorage.getItem("role")
   useEffect(() => {
-    fetch(`http://localhost:5000/api/jobs/${id}`)
-      .then(res => res.json())
-      .then((data) => {
-        setJob(data.job);
-      });
-  }, [id])
+    const fetchjob = async () => {
+    try {
+      const response = await api.get(`/jobs/${id}`)
+      setJob(response.data.job)
+
+    } catch (err) {
+      console.log(err);
+
+    }
+  }
+    fetchjob()
+  },[id])
   if (!jobdetail) {
     return (
       <div className="container mt-5 text-center">

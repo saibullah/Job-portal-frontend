@@ -11,19 +11,19 @@ function Jobs() {
 
   const [jobs, setJobs] = useState([])
   useEffect(() => {
-     setLoading(true);
+    setLoading(true);
     api.get("/jobs").then((res) => {
       console.log("Response:", res.data);
       setJobs(res.data.jobs)
-       setLoading(false); 
+      setLoading(false);
     })
       .catch((err) => {
         console.log(err)
-         setLoading(false)
+        setLoading(false)
 
       })
   }, [])
-   if (loading) {
+  if (loading) {
     return (
       <div className="d-flex flex-column justify-content-center align-items-center vh-100">
 
@@ -41,75 +41,75 @@ function Jobs() {
   return (
     <div>
 
-     
-    <div className="container py-5">
-      <div className="row g-4">
-        {role === "admin" ? (
-  <Link
-    to="/admin-dashboard"
-    className="btn btn-dark"
-  >
-    🛠 Admin Dashboard
-  </Link>
-) : (
-  <Link
-    to="/my-application"
-    className="btn btn-dark"
-  >
-    📄 My Applications
-  </Link>
-)}
-        <div>
-          <h2 className="fw-bold">Latest Jobs</h2>
-          <p className="text-muted">
-            Find your next opportunity
-          </p>
-        </div>
+
+      <div className="container py-5">
+        <div className="row g-4">
+          {role === "admin" ? (
+            <Link
+              to="/admin-dashboard"
+              className="btn btn-dark"
+            >
+              🛠 Admin Dashboard
+            </Link>
+          ) : (
+            <Link
+              to="/my-application"
+              className="btn btn-dark"
+            >
+              📄 My Applications
+            </Link>
+          )}
+          <div>
+            <h2 className="fw-bold">Latest Jobs</h2>
+            <p className="text-muted">
+              Find your next opportunity
+            </p>
+          </div>
 
 
-        {jobs.map((job) => (
-          <div className="col-md-6 col-lg-4" key={job._id}>
+          {jobs.map((job) => (
+            <div className="col-md-6 col-lg-4" key={job._id}>
 
-            <div className="job-card">
+              <div className="job-card">
 
-              <div className="d-flex justify-content-between align-items-start">
+                <div className="d-flex justify-content-between align-items-start">
 
-                <div>
-                  <h4 className="job-title">{job.title}</h4>
-                  <p className="company-name">{job.company}</p>
+                  <div>
+                    <h4 className="job-title">{job.title}</h4>
+                    <p className="company-name">{job.company}</p>
+                  </div>
+
+                  <span className="badge bg-dark">Full Time</span>
+
                 </div>
 
-                <span className="badge bg-dark">Full Time</span>
+                <hr />
+
+                <div className="job-info">
+
+                  <p>📍 {job.location}</p>
+
+                  <p>💰 {job.salary}</p>
+
+                </div>
+
+                <Link
+                  to={`/job/${job._id}`}
+                  className="btn job-btn w-100"
+                >
+                  View Details
+                </Link>
 
               </div>
-
-              <hr />
-
-              <div className="job-info">
-
-                <p>📍 {job.location}</p>
-
-                <p>💰 {job.salary}</p>
-
-              </div>
-
-              <Link
-                to={`/job/${job._id}`}
-                className="btn job-btn w-100"
-              >
-                View Details
-              </Link>
-
             </div>
-          </div>
-        ))}
+          ))}
 
+        </div>
       </div>
-    </div>
-    
-<AiDrawer/>
 
-<Contact/>
+      <AiDrawer />
+
+      <Contact />
     </div>
   )
 }
